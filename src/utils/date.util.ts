@@ -1,5 +1,5 @@
 
-const formatDate = (year?: number, month?:number, day?: number) => {
+const getDateKey = (year?: number, month?:number, day?: number) => {
     let currentDate = new Date();
     if(year && month && day){
         currentDate = new Date(year, month - 1, day);
@@ -11,5 +11,5 @@ const formatDate = (year?: number, month?:number, day?: number) => {
 }
 
 export {
-    formatDate
+    getDateKey
 }
