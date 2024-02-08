@@ -21,7 +21,9 @@
   "homepage": "https://github.com/kingwang09/jesus-supabase#readme",
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
+    "@types/lodash": "^4.14.202",
     "dotenv": "^16.3.1",
+    "lodash": "^4.17.21",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
