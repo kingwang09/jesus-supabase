@@ -16,8 +16,17 @@ const main = async () => {
     if(data){
         for(const history of data){
             console.log('history: ', history);
-            const price_by_daily = history.price_by_daily as unknown as IPriceByDaily;
+            const price_by_daily = history.price_by_daily as unknown as IPriceByDaily[];
             console.log('price_by_daily: ', price_by_daily);
+            for(const priceDaily of price_by_daily){
+                console.log('priceDaily: ', priceDaily);
+                console.log('priceDaily: ', priceDaily.date);
+                console.log('priceDaily: ', priceDaily.price);
+                console.log('priceDaily: ', priceDaily.priceHistory);
+                console.log('priceDaily: ', priceDaily.priceHistory.length);
+                console.log('priceDaily: ', priceDaily.lastCrawledAt);
+            }
+            
         }
     }
 };

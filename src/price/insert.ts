@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
-import { Database } from '../../supabase/type/database.types';
+import { Database, Json } from '../../supabase/type/database.types';
 import { CrawledProductMeta, CrawlingMallType, CrawlingPayload } from './interfaces/crawling.interface';
 import { IPriceByDaily } from './interfaces/price.interface';
 import { formatDate } from '../utils/date.util';
@@ -59,7 +59,7 @@ const main = async () => {
 
                 mall_type: dummyProductMeta.mallType,
                 price_by_last_crawled: dummyProductMeta.price,
-                price_by_daily: JSON.stringify([firstPriceByDaily]),
+                price_by_daily: [firstPriceByDaily] as unknown as Json,
             });
     }
 };
