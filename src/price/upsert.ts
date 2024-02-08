@@ -118,10 +118,10 @@ const dummyCrawlingPayload1: CrawlingPayload = {
     retryCount: 1,
 };
 const dummyProductMeta1: CrawledProductMeta = {
-    price: 170000,
-    link: '쿠팡상세링크',
+    price: 160000,
+    link: '상세링크',
     productTitle: '삼성 이재용 무죄 판결 헌정 모델',
     imageUrl: '이미지링크',
-    mallType: CrawlingMallType.COUPANG,
+    mallType: CrawlingMallType.ELEVENTH_STREET,
 };
 main(dummyCrawlingPayload1, dummyProductMeta1,);
