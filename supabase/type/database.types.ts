@@ -6,7 +6,7 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       _CategoryToPost: {
@@ -148,6 +148,51 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
+      }
+      simple_affiliate_links_history: {
+        Row: {
+          base_price: number | null
+          brand: string
+          created_at: string | null
+          id: number
+          image_url: string | null
+          link: string | null
+          mall_type: string
+          model: string
+          price_by_daily: Json | null
+          price_by_last_crawled: number | null
+          product_category_key: string
+          product_title: string | null
+        }
+        Insert: {
+          base_price?: number | null
+          brand: string
+          created_at?: string | null
+          id?: number
+          image_url?: string | null
+          link?: string | null
+          mall_type: string
+          model: string
+          price_by_daily?: Json | null
+          price_by_last_crawled?: number | null
+          product_category_key: string
+          product_title?: string | null
+        }
+        Update: {
+          base_price?: number | null
+          brand?: string
+          created_at?: string | null
+          id?: number
+          image_url?: string | null
+          link?: string | null
+          mall_type?: string
+          model?: string
+          price_by_daily?: Json | null
+          price_by_last_crawled?: number | null
+          product_category_key?: string
+          product_title?: string | null
+        }
+        Relationships: []
       }
       TimePeriod: {
         Row: {
