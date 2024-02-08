@@ -27,6 +27,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.0",
     "supabase": "^1.115.5"
   }
 }
