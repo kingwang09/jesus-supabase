@@ -21,7 +21,8 @@ const main = async () => {
     if(data){
        //제품에 대해 mallType별 데이터가 있을 것임.
        let chart: IChart[] = [];
-       for(const value of data){
+       let map = new Map();
+       for(const value of data){//mallType별
         console.log(`mallType=${value.mall_type}, value=${value.price_by_last_crawled}`);
         const mallType = convertStringToEnum(CrawlingMallType, value.mall_type);
         const priceListByDaily = value.price_by_daily as unknown as IPriceByDaily[]; //map dateKey:price
@@ -29,14 +30,17 @@ const main = async () => {
             return {
                 dateKey: v.date,
                 price: v.price,
+                mallType: value.mall_type,
             }
         });
         chart.push({
             mallType: mallType,
             chartBody: priceListByDateKey,
-        })
+        });
+        map.set(mallType, priceListByDateKey);
        }
        console.log(chart);
+       console.log(map);
     }
 };
 
