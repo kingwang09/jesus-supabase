@@ -63,7 +63,8 @@ const updatePriceByDaily = async (priceListByDaily: IPriceByDaily[], crawlingPay
             image_url: productMeta.imageUrl,
 
             price_by_last_crawled: productMeta.price,
-            price_by_daily: _priceListByDaily as unknown as Json,
+            price_by_daily: _priceListByDaily as unknown as Json, //이력은 계속 쌓고 차트 보여줄 때 slice로 30개까지 표현하면 되지 않을까 싶음.
+            //수집 가격 중 최소값이면 update 아니면 기존 값 유지
         })
         .eq('model', crawlingPayload.modelName)
         .eq('product_category_key', crawlingPayload.productCategoryKey)
